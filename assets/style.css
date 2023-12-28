@@ -3,6 +3,10 @@
     padding-top: 250px;
 }
 
+header h1 {
+  text-align: center;
+}
+
 button {
   background-color: purple;
   color: white;

@@ -4,6 +4,7 @@
     var secondsLeft = 60;
     var timerInterval = 0;
     var score = 0;
+    var penalty = 10;
     var questionIndex = 0;
     var start = document.querySelector("#start");
     var createList = document.createElement("ul");
@@ -62,6 +63,24 @@
         }
         showQuestions(questionIndex);
     });
+
+//Checks user's answer with the correct anwser
+    function checkAnswer(event) {
+        var chosenAnswer = event.target;
+        var showResult = document.createElement("h1");
+
+        if (chosenAnswer.matches("button")) {
+
+            if (chosenAnswer.textContent == possibleQuestions[questionIndex].answer) {
+                score++;
+                showResult.textContent = "Correct!";
+                console.log = "correct";
+            } else {
+                secondsLeft = secondsLeft - penalty;
+                showResult.textContent = "Incorrect. The correct answer is " + possibleQuestions[questionIndex].answer;
+            }
+        }
+    }
 
 
 

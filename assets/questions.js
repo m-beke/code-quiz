@@ -67,9 +67,11 @@
 //Checks user's answer with the correct anwser
     function checkAnswer(event) {
         var chosenAnswer = event.target;
-        var showResult = document.createElement("h1");
+        var showResult = document.createElement("h2");
+        var endQuiz = document.createElement("h2");
 
         if (chosenAnswer.matches("button")) {
+            document.body.appendChild(showResult);
 
             if (chosenAnswer.textContent == possibleQuestions[questionIndex].answer) {
                 score++;
@@ -80,7 +82,18 @@
                 showResult.textContent = "Incorrect. The correct answer is " + possibleQuestions[questionIndex].answer;
             }
         }
+
+        questionIndex++;
+
+        if (questionIndex >= possibleQuestions.length) {
+            document.body.appendChild(endQuiz);
+            endQuiz.textContent = "Quiz over! " + "You got " + score + " points!";
+        } else {
+            showQuestions(questionIndex);
+        }
+        start.appendChild(showResult);
     }
+
 
 
 

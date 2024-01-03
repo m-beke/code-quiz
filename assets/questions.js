@@ -9,6 +9,7 @@
     var start = document.querySelector("#start");
     var createList = document.createElement("ul");
 
+    
 //Array containing quiz questions
     var possibleQuestions = [
         {
@@ -27,6 +28,7 @@
             answer: "A block of code designed to perform a particular task"
         },
     ]
+
 
 //Displays questions once the begin button has been clicked
     function showQuestions(questionIndex) {
@@ -48,6 +50,7 @@
         })
     }
 
+
 //Starts the quiz timer
     beginTimer.addEventListener("click", function() {
         if (timerInterval === 0) {
@@ -64,11 +67,12 @@
         showQuestions(questionIndex);
     });
 
+
 //Checks user's answer with the correct anwser
     function checkAnswer(event) {
         var chosenAnswer = event.target;
         var showResult = document.createElement("h2");
-        var endQuiz = document.createElement("h2");
+        var showScore = document.createElement("h2");
 
         if (chosenAnswer.matches("button")) {
             document.body.appendChild(showResult);
@@ -82,16 +86,29 @@
                 showResult.textContent = "Incorrect. The correct answer is " + possibleQuestions[questionIndex].answer;
             }
         }
-
+        
+    //Pulls next question or shows the score if there are no more questions
         questionIndex++;
 
         if (questionIndex >= possibleQuestions.length) {
-            document.body.appendChild(endQuiz);
-            endQuiz.textContent = "Quiz over! " + "You got " + score + " points!";
+            endQuiz();
+            document.body.appendChild(showScore);
+            showScore.textContent = "You got " + score + " points!";
         } else {
             showQuestions(questionIndex);
         }
         start.appendChild(showResult);
+    }
+
+
+//Ends the quiz once the timer is up or there are no more questions left
+    function endQuiz() {
+        start.innerHTML = "";
+        time.innerHTML = "";
+
+        var endingHeader = document.createElement("h1");
+        document.body.appendChild(endingHeader);
+        endingHeader.textContent = "Quiz Over";
     }
 
 

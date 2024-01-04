@@ -131,8 +131,10 @@
 
         submitInitials.addEventListener("click", function() {
             var initials = enterInitials.value;
-            var submitScore = initials + " - " + score;
-            
+            var submitScore = {
+                initials: initials,
+                score: score
+            }
 
             if (initials === null){
                 console.log("ERROR: Please enter your initials");

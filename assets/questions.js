@@ -43,6 +43,7 @@
 
         displayChoices.forEach(function (choices) {
             var choiceButton = document.createElement("button");
+            choiceButton.setAttribute("id", "answers");
             choiceButton.textContent = choices;
             start.appendChild(createList);
             createList.appendChild(choiceButton);
@@ -76,12 +77,11 @@
         var showScore = document.createElement("h2");
 
         if (chosenAnswer.matches("button")) {
-            document.body.appendChild(showResult);
+            start.appendChild(showResult);
 
             if (chosenAnswer.textContent == possibleQuestions[questionIndex].answer) {
                 score+= 10;
                 showResult.textContent = "Correct!";
-                console.log = "correct";
             } else {
                 secondsLeft = secondsLeft - penalty;
                 showResult.textContent = "Incorrect. The correct answer is " + possibleQuestions[questionIndex].answer;
@@ -94,7 +94,7 @@
         if (questionIndex >= possibleQuestions.length) {
             endQuiz();
             showResult.textContent = "";
-            document.body.appendChild(showScore);
+            start.appendChild(showScore);
             showScore.textContent = "You got " + score + " points!";
         } else {
             showQuestions(questionIndex);
@@ -109,7 +109,7 @@
         time.innerHTML = "";
 
         var endingHeader = document.createElement("h1");
-        document.body.appendChild(endingHeader);
+        start.appendChild(endingHeader);
         endingHeader.textContent = "Quiz Over";
 
         if (secondsLeft > 0) {
@@ -117,14 +117,41 @@
         }
 
         var initialsPrompt = document.createElement("h3");
-        document.body.appendChild(initialsPrompt);
+        start.appendChild(initialsPrompt);
         initialsPrompt.textContent = "Enter your initials to save your high score!"
 
         var enterInitials = document.createElement("input");
         enterInitials.setAttribute("type", "text");
         enterInitials.textContent = "";
-
         start.appendChild(enterInitials);
+
+        var submitInitials = document.createElement("button");
+        submitInitials.textContent = "Submit";
+        start.appendChild(submitInitials);
+
+        submitInitials.addEventListener("click", function() {
+            var initials = enterInitials.value;
+            var submitScore = initials + " - " + score;
+            
+
+            if (initials === null){
+                console.log("ERROR: Please enter your initials");
+            } else {
+                console.log(submitScore);
+                var storedScores = localStorage.getItem("storedScores");
+                if (storedScores === null) {
+                    storedScores = [];
+                } else {
+                    storedScores = JSON.parse(storedScores);
+                }
+                storedScores.push(submitScore);
+
+                var storeNew = JSON.stringify(storedScores);
+                localStorage.setItem("storedScores", storeNew);
+
+                window.location.replace("./assets/highscores.html");
+            }
+        });
     }
 
 

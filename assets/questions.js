@@ -59,6 +59,7 @@
                 time.textContent = "Time: " + secondsLeft;
 
                 if (secondsLeft <= 0) {
+                    endQuiz();
                     clearInterval(timerInterval);
                     time.textContent = "Time's up!";
                 }
@@ -78,7 +79,7 @@
             document.body.appendChild(showResult);
 
             if (chosenAnswer.textContent == possibleQuestions[questionIndex].answer) {
-                score++;
+                score+= 10;
                 showResult.textContent = "Correct!";
                 console.log = "correct";
             } else {
@@ -92,6 +93,7 @@
 
         if (questionIndex >= possibleQuestions.length) {
             endQuiz();
+            showResult.textContent = "";
             document.body.appendChild(showScore);
             showScore.textContent = "You got " + score + " points!";
         } else {
@@ -101,7 +103,7 @@
     }
 
 
-//Ends the quiz once the timer is up or there are no more questions left
+//Ends the quiz once the timer is up
     function endQuiz() {
         start.innerHTML = "";
         time.innerHTML = "";
@@ -109,6 +111,20 @@
         var endingHeader = document.createElement("h1");
         document.body.appendChild(endingHeader);
         endingHeader.textContent = "Quiz Over";
+
+        if (secondsLeft > 0) {
+            score = score + secondsLeft;
+        }
+
+        var initialsPrompt = document.createElement("h3");
+        document.body.appendChild(initialsPrompt);
+        initialsPrompt.textContent = "Enter your initials to save your high score!"
+
+        var enterInitials = document.createElement("input");
+        enterInitials.setAttribute("type", "text");
+        enterInitials.textContent = "";
+
+        start.appendChild(enterInitials);
     }
 
 

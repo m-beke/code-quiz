@@ -14,6 +14,25 @@ h1, h2 {
   text-align: center;
 }
 
+.card {
+  text-align: center;
+}
+
+li {
+  font-size: large;
+  list-style-type: none;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+li:nth-child(odd){
+  background-color: rgb(223, 187, 223);
+}
+
+li:nth-child(even){
+  background-color: rgb(224, 209, 224);
+}
+
 button {
   background-color: purple;
   color: white;

@@ -27,6 +27,16 @@
             choices: ["A block of code designed to perform a particular task", "zero or more characters written inside quotes", "a special variable, which can hold more than one value", "a format for storing and transporting data"],
             answer: "A block of code designed to perform a particular task"
         },
+        {
+            title: "What tool can be useful for debugging while working in Javascript?",
+            choices: ["Console Log", "Git Bash", "Bug Spray", "None of the Above"],
+            answer: "Console Log"
+        },
+        {
+            title: "What does DRY stand for?",
+            choices: ["Don't Rush Yourself", "Don't Really Yell", "Don't Repeat Yourself", "Do Rhinos Yelp"],
+            answer: "Don't Repeat Yourself"
+        },
     ]
 
 

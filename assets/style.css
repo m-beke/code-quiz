@@ -1,7 +1,20 @@
 * {
   margin: 0;
-  /* display: flex; */
+  font-family: "Candal", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #001219;
+}
+
+body {
   background-color: #E9D8A6;
+}
+
+#container {
+  max-width: 60%;
+  margin: auto;
+  padding-top: 10%;
+  text-align: center;
 }
 
 #stripe-bg {
@@ -22,6 +35,7 @@
 
 #start {
     text-align: center;
+    align-items: center;
     margin: 0;
 }
 
@@ -33,16 +47,34 @@ header {
  
 }
 
+#h1-wrapper {
+  background-color: #CA6702;
+  margin: auto;
+  max-width: 40%;
+  transform: rotate(-5deg);
+  border-radius: 10px;
+}
 
 h1 {
+  margin: auto;
   color: #EE9B00;
   font-family: "Monoton", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
   font-size: 100px;
-  text-shadow: 2px 2px 1px #BB3E03;
+  text-shadow: 3px 3px 1px #BB3E03;
   background-color: #9B2226;
+  padding: 20px;
+  transform: rotate(5deg);
+  border-radius: 10px;
+}
+
+h2 {
+  margin: auto;
+  padding-top: 50px;
+  font-size: 30px;
+  max-width: 90%;
 }
 
 .card {
@@ -65,9 +97,52 @@ li:nth-child(even){
 }
 
 button {
-  background-color: purple;
+  
   color: white;
   padding: 10px;
   margin: 25px;
 }
+
+.btn {
+  background-color: #005F73;
+  border: none;
+}
+
+a {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.result {
+  position: fixed;  
+  top: 50%;        
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  max-width: 50%;
+  text-align: center;
+  z-index: 1000; 
+  width: auto;
+
+  color: white; 
+  border-radius: 10px;
+}
+
+.alert-success {
+  background-color: #28a745; 
+}
+
+.alert-danger {
+  background-color: #dc3545;
+}
+
+#answers {
+  background-color: #005F73;
+  border: none;
+}
+
 

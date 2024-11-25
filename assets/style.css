@@ -1,17 +1,48 @@
+* {
+  margin: 0;
+  /* display: flex; */
+  background-color: #E9D8A6;
+}
+
+#stripe-bg {
+  position: fixed;
+  height: 100%;
+  width: 200px;
+  margin-left: 7%;
+  background: linear-gradient(to right, #9B2226 20%, 
+  #BB3E03 20%, #BB3E03 40%, 
+  #EE9B00 40%, #EE9B00 60%, 
+  #94D2BD 60%, #94D2BD 80%, #005F73 80%);
+}
+
+#timer {
+  font-size: 50px;
+  text-align: end;
+}
+
 #start {
     text-align: center;
-    padding-top: 250px;
+    margin: 0;
 }
 
 header {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   font-size: 24px;
-  margin: 40px;
+ 
 }
 
-h1, h2 {
+
+h1 {
+  color: #EE9B00;
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   text-align: center;
+  font-size: 100px;
+  text-shadow: 2px 2px 1px #BB3E03;
+  background-color: #9B2226;
 }
 
 .card {

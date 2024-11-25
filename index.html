@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./assets/style.css" />
 </head>
-<body>
-    <header>
-        <a href="./assets/highscores.html">View High Scores</a>
-        <div id="timer"></div>
-    </header>
 
+<body>
+    <div id="stripe-bg"> </div>
+    <div id="timer"></div>
     <div id="start">
-        <h1>Coding Quiz Challenge</h1>
-        <h2>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</h2>
+        <div id="h1-wrapper">
+            <h1>Code Quiz</h1>
+        </div>
+        <h2>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+            answers will penalize your score/time by 10 seconds!</h2>
         <button id="begin">Begin Quiz</button>
+        <button id="view-scores"><a href="./assets/highscores.html">View High Scores</a></button>
     </div>
 
     <script src="./assets/questions.js"></script>
 </body>
+
 </html>

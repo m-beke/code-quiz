@@ -55,6 +55,21 @@ header {
   border-radius: 10px;
 }
 
+#quiz-header {
+  transform: rotate(5deg);
+}
+
+#score-header {
+  font-family: "Monoton", sans-serif;
+  margin: auto;
+  max-width: 40%;
+}
+
+.end-header {
+  margin: auto;
+  max-width: 40%;
+}
+
 h1 {
   margin: auto;
   color: #EE9B00;
@@ -66,7 +81,6 @@ h1 {
   text-shadow: 3px 3px 1px #BB3E03;
   background-color: #9B2226;
   padding: 20px;
-  transform: rotate(5deg);
   border-radius: 10px;
 }
 
@@ -143,6 +157,16 @@ a {
 #answers {
   background-color: #005F73;
   border: none;
+}
+
+#button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.clear, .back {
+  border-radius: 10px;
+  font-family: "Candal", serif;
 }
 
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,16 @@
 
 <body>
     <section class="card">
-        <h1>High Scores</h1>
-        <a href = "../index.html">Go Back</a>
+        <h1 id="score-header">High Scores</h1>
         <ul id="scores"></ul>
-        <button id="clear">Clear Scores</button>
+        <div id="button-wrapper">
+            <button type="button" class="btn btn-primary back"><a href="../index.html">Go Back</a></button>
+            
+            <button type="button" class="btn btn-primary clear">Clear</button>
+        </div>
     </section>
 
     <script src="./highscores.js"></script>
 </body>
+
 </html>

@@ -133,6 +133,7 @@ function endQuiz() {
 
     var endingHeader = document.createElement("h1");
     start.appendChild(endingHeader);
+    endingHeader.className = "end-header";
     endingHeader.textContent = "Quiz Over";
 
     if (secondsLeft > 0) {
